@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const latestNews = await getCollection('berita', ({ data }) => {
+  return data.isPublished === true;
+});
+
+const sortedNews = latestNews.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 6);
+---
+
+<BaseLayout title="Beranda">
+  <section class="hero">
+    <h1>SMKN 1 Rongga</h1>
+    <p>Selamat datang di website resmi SMKN 1 Rongga</p>
+  </section>
+
+  <section class="news">
+    <h2>Berita Terbaru</h2>
+    {sortedNews.length > 0 ? (
+      <div class="news-grid">
+        {sortedNews.map((post) => (
+          <article class="news-card">
+            <h3>
+              <a href={`/berita/${post.slug}`}>{post.data.title}</a>
+            </h3>
+            <p class="meta">
+              {post.data.date.toLocaleDateString('id-ID', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+              })} - {post.data.author}
+            </p>
+            {post.data.excerpt && <p class="excerpt">{post.data.excerpt}</p>}
+          </article>
+        ))}
+      </div>
+    ) : (
+      <p>Belum ada berita terbaru.</p>
+    )}
+    <div class="more-news">
+      <a href="/berita">Lihat Semua Berita →</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .news h2 {
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .news-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s;
+  }
+
+  .news-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .news-card h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .news-card h3 a {
+    color: #f97316;
+    text-decoration: none;
+  }
+
+  .news-card h3 a:hover {
+    text-decoration: underline;
+  }
+
+  .meta {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .excerpt {
+    color: #4b5563;
+  }
+
+  .more-news {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .more-news a {
+    color: #f97316;
+    font-weight: 500;
+  }
+</style>

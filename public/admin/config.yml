@@ -1,0 +1,34 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+local_backend:
+  allowed_hosts:
+    - "localhost"
+    - "127.0.0.1"
+
+collections:
+  - name: "berita"
+    label: "Berita"
+    folder: "src/content/berita"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", pattern: ["^[a-z0-9-]+$", "Lowercase letters, numbers, and dashes only"] }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "Admin" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }
+      - { label: "Categories", name: "categories", widget: "list", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
+      - { label: "Published", name: "isPublished", widget: "boolean", default: true }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+# OAuth Configuration - akan di-config setelah decaps-auth deployed
+# oauth:
+#   backend_url: "https://your-decaps-auth.workers.dev"
+#   base_url: "https://smkn1rongga.sch.id"

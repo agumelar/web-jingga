@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('berita');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={post.data.title} description={post.data.excerpt}>
+  <article class="post">
+    <header>
+      <h1>{post.data.title}</h1>
+      <p class="meta">
+        {post.data.date.toLocaleDateString('id-ID', { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        })} | {post.data.author}
+      </p>
+      {post.data.categories.length > 0 && (
+        <p class="categories">
+          Kategori: {post.data.categories.join(', ')}
+        </p>
+      )}
+    </header>
+    
+    <div class="content">
+      <Content />
+    </div>
+  </article>
+
+  <div class="back">
+    <a href="/berita">← Kembali ke Berita</a>
+  </div>
+</BaseLayout>
+
+<style>
+  .post {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .post header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .post h1 {
+    font-size: 2rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+
+  .meta {
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+
+  .categories {
+    color: #f97316;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }
+
+  .content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+  }
+
+  .content :global(h2) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+  }
+
+  .content :global(h3) {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .content :global(p) {
+    margin-bottom: 1rem;
+  }
+
+  .content :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .back {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .back a {
+    color: #f97316;
+    text-decoration: none;
+  }
+
+  .back a:hover {
+    text-decoration: underline;
+  }
+</style>

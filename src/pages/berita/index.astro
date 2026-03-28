@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allNews = await getCollection('berita', ({ data }) => {
+  return data.isPublished === true;
+});
+
+const sortedNews = allNews.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Berita">
+  <h1>Berita & Pengumuman</h1>
+
+  {sortedNews.length > 0 ? (
+    <div class="news-list">
+      {sortedNews.map((post) => (
+        <article class="news-item">
+          <h2>
+            <a href={`/berita/${post.slug}`}>{post.data.title}</a>
+          </h2>
+          <p class="meta">
+            {post.data.date.toLocaleDateString('id-ID', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })} - {post.data.author}
+          </p>
+          {post.data.excerpt && <p class="excerpt">{post.data.excerpt}</p>}
+        </article>
+      ))}
+    </div>
+  ) : (
+    <p>Belum ada berita.</p>
+  )}
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: 2rem;
+    color: #1f2937;
+  }
+
+  .news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .news-item {
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+  }
+
+  .news-item h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .news-item h2 a {
+    color: #f97316;
+    text-decoration: none;
+  }
+
+  .news-item h2 a:hover {
+    text-decoration: underline;
+  }
+
+  .meta {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .excerpt {
+    color: #4b5563;
+  }
+</style>
