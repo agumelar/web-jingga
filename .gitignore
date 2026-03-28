@@ -4,3 +4,8 @@ dist/
 *.log
 .DS_Store
 .env
+node_modules
+.vscode
+prd.md
+plan.md
+log.md
