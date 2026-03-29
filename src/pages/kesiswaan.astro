@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Kesiswaan">
+  <div class="page-header">
+    <h1>Kesiswaan</h1>
+  </div>
+
+  <div class="content">
+    <section>
+      <h2>Tentang Kesiswaan</h2>
+      <p>Bidang kesiswaan SMKN 1 Rongga bertanggung jawab dalam pengembangan karakter, kedisiplinan, dan potensi siswa secara holistik. Kami percaya bahwa pendidikan bukan hanya tentang akademik, tetapi juga pembentukan karakter.</p>
+    </section>
+
+    <section>
+      <h2>Program Kerja</h2>
+      <ul>
+        <li>Pengembangan Organisasi Siswa Intra Sekolah (OSIS)</li>
+        <li>Penguatan Organisasi Kesiswaan (Paskibra, Pramuka, PMR, KPLH GEMPAR)</li>
+        <li>Program kedisiplinan dan tata tertib sekolah</li>
+        <li>Pengembangan bakat dan minat siswa</li>
+        <li>Pelayanan Konseling siswa</li>
+        <li>Pengembangan soft skills</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Prestasi Siswa</h2>
+      <p>Siswa SMKN 1 Rongga telah berbagai prestasi di berbagai bidang:</p>
+      <ul>
+        <li>Juara Lomba Paskibra tingkat kabupaten dan provinsi</li>
+        <li>Juara Pramuka tingkat kabupaten</li>
+        <li>Juara berbagai kompetisi akademis dan non-akademis</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Ekstrakurikuler</h2>
+      <div class="ekskul-grid">
+        <div class="ekskul-item">
+          <h3>OSIS</h3>
+          <p>Organisasi Siswa Intra Sekolah</p>
+        </div>
+        <div class="ekskul-item">
+          <h3>Paskibra</h3>
+          <p>Pasukan Pengibar Bendera</p>
+        </div>
+        <div class="ekskul-item">
+          <h3>Pramuka</h3>
+          <p>Gerakan Pramuka</p>
+        </div>
+        <div class="ekskul-item">
+          <h3>PMR</h3>
+          <p>Palang Merah Remaja</p>
+        </div>
+        <div class="ekskul-item">
+          <h3>KPLH GEMPAR</h3>
+          <p>Kelompok Pecinta Lingkungan Hidup</p>
+        </div>
+        <div class="ekskul-item">
+          <h3>Seni dan Budaya</h3>
+          <p>Paduan Suara, Tari, Theatre</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f97316;
+  }
+
+  ul {
+    margin-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  .ekskul-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .ekskul-item {
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+  }
+
+  .ekskul-item h3 {
+    color: #f97316;
+    margin-bottom: 0.5rem;
+  }
+</style>

@@ -1,5 +1,8 @@
 # web-jingga Implementation Plan
 
+## Status: COMPLETED ✅
+**Tanggal:** 28 Maret 2026
+
 ## Overview
 Modernisasi website SMKN 1 Rongga dengan arsitektur decoupled: Astro SSG + Decap CMS + Google Auth
 
@@ -27,6 +30,15 @@ Modernisasi website SMKN 1 Rongga dengan arsitektur decoupled: Astro SSG + Decap
 ### Phase 4: Deployment
 - [ ] Task 7: Deploy to Vercel + Custom Domain
 
+### Phase 5: Full Website Template (COMPLETED)
+- [x] Task 8: Update BaseLayout with full navigation + footer
+- [x] Task 9: Homepage with all sections
+- [x] Task 10: Profil pages (profil, visi-misi, sejarah, struktur)
+- [x] Task 11: Akademik pages (jurusan, kurikulum, kesiswaan)
+- [x] Task 12: Layanan pages (ppdb, informasi)
+- [x] Task 13: Siswa pages (osis, paskibra, pramuka, pmr, kplh)
+- [x] Task 14: Sarana prasana
+
 ---
 
 ## File Structure Target
@@ -38,12 +50,23 @@ web-jingga/
 ├── src/
 │   ├── content/
 │   │   ├── config.ts
-│   │   └── berita/
+│   │   └── berita/ (65 posts)
 │   ├── layouts/
 │   │   └── BaseLayout.astro
 │   └── pages/
 │       ├── index.astro
-│       └── berita/[...slug].astro
+│       ├── berita/
+│       ├── profil/
+│       ├── akademik/
+│       ├── siswa/
+│       ├── atph.astro
+│       ├── rpl.astro
+│       ├── tbsm.astro
+│       ├── kurikulum.astro
+│       ├── kesiswaan.astro
+│       ├── hubungan-industri.astro
+│       ├── ppdb.astro
+│       └── ...
 ├── public/
 │   ├── admin/
 │   │   ├── index.html
@@ -54,7 +77,5 @@ web-jingga/
 └── docs/
     └── superpowers/
         ├── specs/
-        │   └── 2026-03-28-web-jingga-setup-design.md
         └── plans/
-            └── 2026-03-28-web-jingga-setup-plan.md
 ```

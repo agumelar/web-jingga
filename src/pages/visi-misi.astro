@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Visi Misi">
+  <div class="page-header">
+    <h1>Visi dan Misi</h1>
+  </div>
+
+  <div class="content">
+    <section>
+      <h2>Visi</h2>
+      <div class="vision-box">
+        <p>"Menjadi sekolah menengah kejuruan yang bermutu, kompetitif, dan berakhlakul karimah"</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Misi</h2>
+      <ol class="mission-list">
+        <li>
+          <h3>Penyelenggaraan Pendidikan Bermutu</h3>
+          <p>Menyelenggarakan pendidikan yang bermutu dan relevan dengan tuntutan dunia kerja</p>
+        </li>
+        <li>
+          <h3>Pengembangan Kompetensi</h3>
+          <p>Mengembangkan kompetensi siswa sesuai dengan kebutuhan industri dan dunia kerja</p>
+        </li>
+        <li>
+          <h3>Pengembangan Karakter</h3>
+          <p>Membentuk karakter siswa yang berakhlakul karimah, disiplin, dan bertanggung jawab</p>
+        </li>
+        <li>
+          <h3>Kerja Sama Industri</h3>
+          <p>Membangun kerja sama yang aktif dengan dunia industri dan dunia kerja</p>
+        </li>
+        <li>
+          <h3>Sekolah Hijau</h3>
+          <p>Mewujudkan sekolah yang hijau (eco-friendly) dan berkelanjutan</p>
+        </li>
+        <li>
+          <h3>Smart School</h3>
+          <p>Menerapkan teknologi informasi dan komunikasi dalam pembelajaran</p>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Tujuan</h2>
+      <ul>
+        <li>Menghasilkan lulusan yang kompeten dan siap kerja</li>
+        <li>Meningkatkan kualitas pembelajaran dan pelatihan</li>
+        <li>Memperkuat linkage dengan dunia industri</li>
+        <li>Membentuk siswa yang berakhlak mulia dan mandiri</li>
+      </ul>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  section {
+    margin-bottom: 2.5rem;
+  }
+
+  h2 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+  }
+
+  .vision-box {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .mission-list {
+    list-style: none;
+  }
+
+  .mission-list li {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-left: 4px solid #f97316;
+    background: #f9fafb;
+  }
+
+  .mission-list h3 {
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+
+  .mission-list p {
+    color: #6b7280;
+  }
+</style>

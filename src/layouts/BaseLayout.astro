@@ -4,7 +4,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Website SMKN 1 Rongga" } = Astro.props;
+const { title, description = "SMK Negeri 1 Rongga - Eco dan Smart School" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -17,18 +17,135 @@ const { title, description = "Website SMKN 1 Rongga" } = Astro.props;
     <title>{title} | SMKN 1 Rongga</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="/">Beranda</a>
-        <a href="/berita">Berita</a>
-        <a href="/admin">Admin</a>
+    <header class="main-header">
+      <div class="header-top">
+        <div class="container">
+          <div class="logo-section">
+            <img src="https://smkn1rongga.sch.id/wp-content/uploads/2017/08/LOGO-SMK-Rongga-e1501560748511.jpg" alt="SMKN 1 Rongga" class="logo" />
+            <div class="school-name">
+              <h1>SMK Negeri 1 Rongga</h1>
+              <p>Eco dan Smart School</p>
+            </div>
+          </div>
+          <div class="contact-info">
+            <span>📞 (022) 6950350</span>
+            <span>📧 mail@smkn1rongga.sch.id</span>
+          </div>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <div class="container">
+          <ul class="nav-menu">
+            <li><a href="/">Beranda</a></li>
+            <li class="dropdown">
+              <a href="#">Profil ▾</a>
+              <ul class="dropdown-content">
+                <li><a href="/profil">Profil Singkat</a></li>
+                <li><a href="/profil-pimpinan">Profil Pimpinan</a></li>
+                <li><a href="/sejarah">Sejarah Singkat</a></li>
+                <li><a href="/visi-misi">Visi Misi</a></li>
+                <li><a href="/struktur-organisasi">Struktur Organisasi</a></li>
+                <li><a href="/program-kerja">Program Kerja</a></li>
+                <li><a href="/sarana-prasana">Sarana Prasarana</a></li>
+                <li><a href="/kontak">Kontak dan Informasi</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">Akademik ▾</a>
+              <ul class="dropdown-content">
+                <li><a href="/jurusan">Jurusan</a></li>
+                <li><a href="/atph">ATPH</a></li>
+                <li><a href="/rpl">Rekayasa Perangkat Lunak</a></li>
+                <li><a href="/tbsm">Teknik dan Bisnis Sepeda Motor</a></li>
+                <li><a href="/kurikulum">Kurikulum</a></li>
+                <li><a href="/kesiswaan">Kesiswaan</a></li>
+                <li><a href="/hubungan-industri">Hubungan Industri</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">Layanan ▾</a>
+              <ul class="dropdown-content">
+                <li><a href="/berita">Berita</a></li>
+                <li><a href="/informasi-siswa">Informasi Siswa</a></li>
+                <li><a href="/informasi-gtk">Informasi GTK</a></li>
+                <li><a href="/layanan-masyarakat">Layanan Masyarakat</a></li>
+                <li><a href="/informasi-darurat">Informasi Darurat</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">Siswa ▾</a>
+              <ul class="dropdown-content">
+                <li><a href="/osis">OSIS</a></li>
+                <li><a href="/paskibra">Paskibra</a></li>
+                <li><a href="/pramuka">Pramuka</a></li>
+                <li><a href="/pmr">PMR</a></li>
+                <li><a href="/kplh-gempar">KPLH GEMPAR</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">Link ▾</a>
+              <ul class="dropdown-content">
+                <li><a href="http://belajar.smkn1rongga.sch.id" target="_blank">LMS Smart Learning</a></li>
+                <li><a href="http://classroom.smkn1rongga.sch.id" target="_blank">Smart Classroom</a></li>
+                <li><a href="http://prakerin.smkn1rongga.sch.id" target="_blank">Smart Prakerin</a></li>
+                <li><a href="http://absensi.smkn1rongga.sch.id" target="_blank">Smart Absensi</a></li>
+                <li><a href="https://kewirausahaan.smkn1rongga.sch.id" target="_blank">E-Commerce</a></li>
+                <li><a href="http://library.smkn1rongga.sch.id" target="_blank">Perpustakaan</a></li>
+              </ul>
+            </li>
+            <li><a href="/admin">Admin</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
-    <main>
+
+    <main id="content">
       <slot />
     </main>
-    <footer>
-      <p>&copy; 2026 SMKN 1 Rongga. All rights reserved.</p>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h3>SMKN 1 Rongga</h3>
+            <p>We Are Eco and Smart School</p>
+            <p>Jl. Cibedug, Desa Cibedug, Kecamatan Rongga.<br/>Kabupaten Bandung Barat, Jawa Barat 40556</p>
+          </div>
+          <div class="footer-section">
+            <h3>Tautan Cepat</h3>
+            <ul>
+              <li><a href="/profil">Profil</a></li>
+              <li><a href="/jurusan">Jurusan</a></li>
+              <li><a href="/berita">Berita</a></li>
+              <li><a href="/ppdb">PPDB</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Tautan Pendidikan</h3>
+            <ul>
+              <li><a href="http://disdik.jabarprov.go.id" target="_blank">Disdik Jawa Barat</a></li>
+              <li><a href="http://psmk.kemdikbud.go.id" target="_blank">Direktorat Pembinaan SMK</a></li>
+              <li><a href="https://www.kemdikbud.go.id" target="_blank">Kemendikbud</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Hubungi Kami</h3>
+            <ul>
+              <li>📞 (022) 6950350</li>
+              <li>📱 085156030503</li>
+              <li>📧 mail@smkn1rongga.sch.id</li>
+            </ul>
+            <div class="social-links">
+              <a href="https://instagram.com/smkn1rongga" target="_blank">Instagram</a>
+              <a href="http://facebook.com/smkn1ronggaofficial" target="_blank">Facebook</a>
+              <a href="http://twitter.com/smkn1rongga" target="_blank">Twitter</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 SMK Negeri 1 Rongga | Designed by: SMKN 1 Rongga | Powered by: Astro</p>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
@@ -46,40 +163,203 @@ const { title, description = "Website SMKN 1 Rongga" } = Astro.props;
     color: #333;
   }
 
-  header {
-    background: #f97316;
-    padding: 1rem;
-  }
-
-  nav {
+  .container {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    gap: 1.5rem;
+    padding: 0 1rem;
   }
 
-  nav a {
+  /* Header Styles */
+  .main-header {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .header-top {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    padding: 1rem 0;
+    color: white;
+  }
+
+  .header-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+  }
+
+  .school-name h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .school-name p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  .contact-info {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  /* Navigation */
+  .main-nav {
+    background: #1f2937;
+    padding: 0;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+
+  .nav-menu > li {
+    position: relative;
+  }
+
+  .nav-menu > li > a {
+    display: block;
+    padding: 1rem 1.25rem;
     color: white;
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s;
   }
 
-  nav a:hover {
-    text-decoration: underline;
+  .nav-menu > li > a:hover {
+    background: rgba(255,255,255,0.1);
   }
 
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+  /* Dropdown */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    list-style: none;
+    z-index: 1000;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .dropdown-content li a:hover {
+    background: #f97316;
+    color: white;
+  }
+
+  /* Main Content */
+  #content {
     min-height: 60vh;
   }
 
-  footer {
+  /* Footer */
+  .main-footer {
     background: #1f2937;
     color: white;
-    text-align: center;
-    padding: 2rem;
+    padding: 3rem 0 1rem;
     margin-top: 3rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-section h3 {
+    color: #f97316;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .footer-section ul {
+    list-style: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-section a {
+    color: #d1d5db;
+    text-decoration: none;
+  }
+
+  .footer-section a:hover {
+    color: #f97316;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header-top .container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .nav-menu {
+      flex-direction: column;
+    }
+    
+    .dropdown-content {
+      position: static;
+      box-shadow: none;
+      background: #374151;
+    }
+    
+    .dropdown-content li a {
+      color: #d1d5db;
+      padding-left: 2rem;
+    }
   }
 </style>

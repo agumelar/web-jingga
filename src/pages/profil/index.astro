@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Profil">
+  <div class="page-header">
+    <h1>Profil SMKN 1 Rongga</h1>
+  </div>
+
+  <div class="content">
+    <section>
+      <h2>Tentang Kami</h2>
+      <p>SMK Negeri 1 Rongga adalah sekolah menengah kejuruan yang terletak di Kecamatan Rongga, Kabupaten Bandung Barat, Jawa Barat. Kami berkomitmen untuk menjadi sekolah yang hijau (Eco) dan cerdas (Smart).</p>
+    </section>
+
+    <section>
+      <h2>Visi</h2>
+      <p>Menjadi sekolah menengah kejuruan yang bermutu, kompetitif, dan berakhlakul karimah.</p>
+    </section>
+
+    <section>
+      <h2>Misi</h2>
+      <ul>
+        <li>Menyediakan pendidikan yang bermutu dan relevan dengan dunia kerja</li>
+        <li>Mengembangkan kompetensi siswa sesuai dengan kebutuhan industri</li>
+        <li>Membentuk karakter siswa yang berakhlakul karimah</li>
+        <li>Membangun kerjasama dengan dunia industri dan dunia kerja</li>
+        <li>Mewujudkan sekolah yang hijau dan berkelanjutan</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Identitas Sekolah</h2>
+      <table class="info-table">
+        <tr>
+          <th>Nama Sekolah</th>
+          <td>SMK Negeri 1 Rongga</td>
+        </tr>
+        <tr>
+          <th>NPSN</th>
+          <td>20233619</td>
+        </tr>
+        <tr>
+          <th>Alamat</th>
+          <td>Jl. Cibedug, Desa Cibedug, Kecamatan Rongga, Kabupaten Bandung Barat, Jawa Barat 40556</td>
+        </tr>
+        <tr>
+          <th>Telepon</th>
+          <td>(022) 6950350</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>mail@smkn1rongga.sch.id</td>
+        </tr>
+        <tr>
+          <th>Status</th>
+          <td>Negeri</td>
+        </tr>
+        <tr>
+          <th>Bentuk Pendidikan</th>
+          <td>Sekolah Menengah Kejuruan</td>
+        </tr>
+      </table>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f97316;
+  }
+
+  ul {
+    margin-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .info-table th, .info-table td {
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    text-align: left;
+  }
+
+  .info-table th {
+    background: #f3f4f6;
+    width: 200px;
+  }
+</style>

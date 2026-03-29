@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Informasi GTK">
+  <div class="page-header">
+    <h1>Informasi Guru dan Tenaga Kependidikan</h1>
+  </div>
+
+  <div class="content">
+    <section>
+      <h2>Informasi GTK</h2>
+      <p>Halaman ini menyediakan berbagai informasi penting untuk Guru dan Tenaga Kependidikan (GTK) SMKN 1 Rongga.</p>
+    </section>
+
+    <section>
+      <h2>Layanan Digital</h2>
+      <ul>
+        <li><a href="http://belajar.smkn1rongga.sch.id" target="_blank">LMS Smart Learning</a> - Platform pembelajaran online</li>
+        <li><a href="http://classroom.smkn1rongga.sch.id" target="_blank">Smart Classroom</a> - Classroom digital</li>
+        <li><a href="http://prakerin.smkn1rongga.sch.id" target="_blank">Smart Prakerin</a> - Portal Prakerin</li>
+        <li><a href="http://absensi.smkn1rongga.sch.id" target="_blank">Smart Absensi</a> - Sistem absensi</li>
+        <li><a href="https://www.smkn1rongga.sch.id/dapodik/" target="_blank">Dapodik</a> - Data Pokok Pendidikan</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Informasi</h2>
+      <ul>
+        <li><a href="/kurikulum">Kurikulum</a> - Kurikulum yang diterapkan</li>
+        <li><a href="/program-kerja">Program Kerja</a> - Program kerja sekolah</li>
+        <li><a href="/sarana-prasana">Sarana Prasarana</a> - Fasilitas sekolah</li>
+      </ul>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f97316;
+  }
+
+  ul {
+    margin-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: #f97316;
+  }
+</style>
